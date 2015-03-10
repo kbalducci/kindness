@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :organizations
   devise_for :users
 
-  resources :users do
-    resources :acts
-  end
+  # resources :users do
+  #   resources :acts
+  # end
 
-  resources :organizations do
-    resources :services
-  end
+  # resources :organizations do
+  #   resources :services
+  # end
 
   root "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
