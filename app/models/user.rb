@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :acts
   has_many :services, through: :volunteership
-  # has many :tasks, through: :kindships, class_name: :act
+  has_many :tasks, through: :kindships, class_name: "Act"
 end
