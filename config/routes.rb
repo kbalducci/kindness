@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :organizations
   devise_for :users
 
-  resources users do
-    resources acts
+  resources :users do
+    resources :acts
   end
 
-  resources organizations do
-    resources services
+  resources :organizations do
+    resources :services
   end
 
   root "welcome#index"
