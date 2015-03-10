@@ -30,10 +30,10 @@ class DeviseCreateOrganizations < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :name
-      t.string :zipcode
-      t.string :phone
-      t.string :bio
+      t.string :name, null: false
+      t.string :zipcode, null: false
+      t.string :phone, null: false
+      t.string :bio, null: false
 
       t.timestamps
     end

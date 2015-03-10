@@ -1,7 +1,7 @@
 class CreateActs < ActiveRecord::Migration
   def change
     create_table :acts do |t|
-      t.string :title
+      t.string :title, null: false
       t.references :user, index: true
 
       t.timestamps null: false
