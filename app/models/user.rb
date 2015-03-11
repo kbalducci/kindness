@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :opportunities, through: :volunteerships, class_name: "Service"
   has_many :tasks, through: :kindships, class_name: "Act"
 
+
   has_attached_file :avatar,
   :styles => { :medium => "300x300>", :thumb => "100x100>" },
   :bucket => 'kbjsinstaclone',
