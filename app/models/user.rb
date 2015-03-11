@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :acts
-  has_many :services, through: :volunteership
+  has_many :services
+  has_many :opportunities, through: :volunteerships, class_name: "Service"
   has_many :tasks, through: :kindships, class_name: "Act"
 
   has_attached_file :avatar,

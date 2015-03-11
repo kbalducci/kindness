@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310154639) do
+ActiveRecord::Schema.define(version: 20150311173051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,9 +70,11 @@ ActiveRecord::Schema.define(version: 20150310154639) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "services", ["organization_id"], name: "index_services_on_organization_id", using: :btree
+  add_index "services", ["user_id"], name: "index_services_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -134,6 +136,7 @@ ActiveRecord::Schema.define(version: 20150310154639) do
   add_foreign_key "kindships", "acts"
   add_foreign_key "kindships", "users"
   add_foreign_key "services", "organizations"
+  add_foreign_key "services", "users"
   add_foreign_key "taggings", "acts"
   add_foreign_key "taggings", "services"
   add_foreign_key "taggings", "tags"
