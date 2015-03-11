@@ -1,1 +1,41 @@
-<h1>Welcome#index</h1>
+
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+  <div class="jumbotron">
+  </div>
+    <h1>Start making a difference today!</h1>
+
+    <p>Welcome to Lift Up, a place where people come to spread kindness and help the causes they feel passionate about. </p>
+
+    <p>How it works:
+    <br />
+    Are you an individual looking to make a difference? Then sign on up and choose random acts of kindness to add to your to do list. Have a great idea for a random act others may enjoy? Add it to our list of possible acts!
+    <br />
+    Or are you an organization that needs some help? Post your volunteers needed advertisement so that users can sign up to help out.</p>
+
+    <p>"Do small things with great love." Mother Theresa </p>
+
+
+
+    <% if user_signed_in? %>
+      <div class="alert alert-dismissible alert-success">
+      <%= link_to('Logout', destroy_user_session_path(@current_user), :method => :delete, class: "btn btn-primary btn-lg" ) %>
+      <%= link_to('Users', users_path, class: "btn btn-primary btn-lg") %>
+      <%= link_to('Conference Rooms',rooms_path, class: "btn btn-primary btn-lg") %>
+      </div>
+    <% else %>
+      <div class="alert alert-dismissible alert-warning">
+        <h4>Please Sign In or Sign Up to access the site!</h4>
+      </div>
+      <div class="alert alert-dismissible alert-danger">
+        <%= link_to('Sign Up Now', new_user_registration_path, class: "btn btn-primary btn-lg")%>
+        <%= link_to('Sign In Now', new_user_session_path, class: "btn btn-primary btn-lg")%>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>

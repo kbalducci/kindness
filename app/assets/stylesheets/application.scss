@@ -1,2 +1,16 @@
     @import 'bootstrap-sprockets';
     @import 'bootstrap';
+
+    .jumbotron {
+    margin-bottom: 0px;
+    background-image: url(http://beta.ucb.co.uk/sites/default/files/imagecache/scale_crop_640_245/lift-up-banner.png);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fffbff;
+    height: 300px;
+    width: 800px;
+    // margin-top: -75px;
+  /*    */
+}
+
