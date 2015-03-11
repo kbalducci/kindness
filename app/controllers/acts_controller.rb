@@ -10,10 +10,11 @@ class ActsController < ApplicationController
 
   def create
     @act = Act.new(act_params)
+    @act.user_id = current_user.id
 
     respond_to do |format|
       if @act.save
-        format.html { redirect_to @act, notice: 'User was successfully created.' }
+        format.html { redirect_to acts_path, notice: 'User was successfully created.' }
       else
         format.html { render "welcome/index", notice: "There was a problem." }
       end
