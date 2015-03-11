@@ -2,14 +2,6 @@ class UsersController < ApplicationController
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
-  # has_attached_file :avatar,
-  # :styles => { :medium => "300x300>", :thumb => "100x100>" },
-  # :bucket => 'kbjsinstaclone',
-  # :url =>':s3_domain_url',
-  # :path => ':class/:attachment/:id_partition/:style/:filename',
-  # :default_url => "/images/:style/missing.png"
-  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
   def index
     @users = User.all
   end
@@ -30,6 +22,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :user_name, :zipcode, :phone, :bio, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :user_name, :zipcode, :avatar, :phone, :bio)
     end
 end
