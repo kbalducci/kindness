@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-    end
+  end
 
     private
     def user_params
