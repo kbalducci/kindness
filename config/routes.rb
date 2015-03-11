@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :organizations
   devise_for :users
 
-  # resources :users do
+  resources :users
   #   resources :acts
   # end
 
