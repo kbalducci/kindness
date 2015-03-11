@@ -1,4 +1,12 @@
 Rails.application.configure do
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => "kbjsinstaclone",
+    :access_key_id => Figaro.env.aws_key,
+    :secret_access_key => Figaro.env.aws_secret
+  }
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
