@@ -11,6 +11,8 @@ class ActsController < ApplicationController
   def create
     @act = Act.new(act_params)
     @act.user_id = current_user.id
+    @act.tag_id = Tag.find(params[:tag_id]).id if params[:tag_id]
+
 
     respond_to do |format|
       if @act.save
@@ -23,6 +25,6 @@ class ActsController < ApplicationController
 
   private
   def act_params
-    params.require(:act).permit(:title)
+    params.require(:act).permit(:title, :tag_id)
   end
 end
