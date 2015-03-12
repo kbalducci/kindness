@@ -3,10 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :title, label: 'Enter your random act of kindness suggestion here!' %>
-    <%= f.input :tags, collection: %w[Animals Environment Elderly Youth Monetary Other] %>
-
-<!-- f.association :tags, collection: Tag.name, prompt: "Choose a category", label_method: :name, value_method: :id, include_blank: false -->
-    <!-- collection: Act.active.all(order:'name'), -->
+    <%= f.association :tags, as: :check_boxes, collection: Tag.name, label_method: :name, value_method: :id, include_blank: false, collection: Tag.all.order('name') %>
   </div>
 
   <br />

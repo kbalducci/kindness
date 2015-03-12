@@ -11,12 +11,13 @@ class ActsController < ApplicationController
   def create
     @act = Act.new(act_params)
     @act.user_id = current_user.id
-    @act.tag_id = Tag.find(params[:tag_id]).id if params[:tag_id]
-
 
     respond_to do |format|
       if @act.save
-        format.html { redirect_to acts_path, notice: 'User was successfully created.' }
+        params[:act][:tag_ids].each do |tag_id|
+          Tagging.create({ act_id: @act.id, tag_id: tag_id }) unless tag_id.empty?
+        end
+        format.html { redirect_to acts_path, notice: 'Act was successfully created.' }
       else
         format.html { render "welcome/index", notice: "There was a problem." }
       end

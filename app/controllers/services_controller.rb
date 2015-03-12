@@ -10,11 +10,12 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.user_id = current_user.id
-    @service.tag_id = Tag.find(params[:tag_id]).id if params[:tag_id]
-
 
     respond_to do |format|
       if @service.save
+        params[:service][:tag_ids].each do |tag_id|
+          Tagging.create({ service_id: @service.id, tag_id: tag_id }) unless tag_id.empty?
+        end
         format.html { redirect_to services_path, notice: ' Volunteer Opportunity was successfully created.' }
       else
         format.html { render "welcome/index", notice: "There was a problem." }
