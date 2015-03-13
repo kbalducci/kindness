@@ -24,6 +24,8 @@
       <div class="alert alert-dismissible alert-success">
       <%= link_to('Logout', destroy_user_session_path, method: :DELETE, class: "btn btn-primary btn-lg") %>
       <%= link_to('Users', users_path, class: "btn btn-primary btn-lg") %>
+      <%= link_to('Random Acts of Kindness', acts_path, class: "btn btn-primary btn-lg")%>
+      <%= link_to('Volunteer Opportunities', services_path, class: "btn btn-primary btn-lg")%>
       </div>
     <% else %>
       <div class="alert alert-dismissible alert-warning">
@@ -32,6 +34,7 @@
       <div class="alert alert-dismissible alert-danger">
         <%= link_to('Sign Up Now', new_user_registration_path, class: "btn btn-primary btn-lg")%>
         <%= link_to('Sign In Now', new_user_session_path, class: "btn btn-primary btn-lg")%>
+
       </div>
     <% end %>
   </div>

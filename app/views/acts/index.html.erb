@@ -6,12 +6,10 @@
   </div>
 </div>
 <div class="row">
-<!-- Button trigger modal -->
 <div class="col-md-4">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Add to our list
-  </button>
 </div>
+<!-- Button trigger modal -->
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -27,8 +25,19 @@
       </div>
     </div>
   </div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-5">
+<!-- Button trigger modal -->
 
-<div class="col-md-8">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add to our list
+  </button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+
 
 <ul>
 <% @acts.each do |act| %>
