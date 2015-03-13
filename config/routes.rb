@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :acts
+  resources :acts do
+    member do
+      post :create_task
+    end
+  end
   resources :services
-  #   resources :acts
+    # member do
+    #   get :create_opportunities
   # end
 
-  # resources :organizations do
-  #   resources :services
-  # end
 
   root "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
