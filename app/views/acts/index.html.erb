@@ -8,9 +8,14 @@
 <div class="row">
 <div class="col-md-4">
 </div>
+
+
 <!-- Button trigger modal -->
 
-  <!-- Modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add to our list
+  </button>
+<!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -28,11 +33,6 @@
 </div>
 <div class="row">
 <div class="col-md-8 col-md-offset-5">
-<!-- Button trigger modal -->
-
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Add to our list
-  </button>
 </div>
 </div>
 <div class="row">
@@ -42,6 +42,11 @@
 <ul>
 <% @acts.each do |act| %>
   <li><h3><%= act.title %></h3></li>
+  <button type="button" class="btn btn-default"> <%= link_to act.title, add_task_act_path(act.id), method: :post, :remote => true %>Add to my To Do list</button>
+
+
+<!--   # remote: true
+    # link_to "act.name", create_task_act_path(act_id) -->
 <% end %>
 </ul>
 </div>

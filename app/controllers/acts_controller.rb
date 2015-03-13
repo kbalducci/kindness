@@ -24,7 +24,17 @@ class ActsController < ApplicationController
     end
   end
 
-  def create_task
+  def add_task
+    task = Act.find(params[:id])
+    user_id = current_user.id
+
+    respond_to do |format|
+      if Kindship.create(act_id: task.id, user_id: user_id)
+        format.html { redirect_to users_path(current_user), notice: 'Act was successfully created.' }
+      else
+        format.html { render "welcome/index", notice: "There was a problem." }
+      end
+    end
     #task = #Click Button = [actname, act_id]
     # current_user.tasks.create!(user_id: current_user.id,
     #                            act_id: @act.id

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :acts do
     member do
-      post :create_task
+      post :add_task
     end
   end
   resources :services
