@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :kindships
   # has_many :tasks, through: :kindships, :source => "Act"
   # has_many :tasks, through: :kindships, class_name: "Act"
-  has_many :tasks, through: :kindships, class_name: :act
+  has_many :tasks, through: :kindships, source: :act
 
 
   has_attached_file :avatar,
