@@ -35,22 +35,6 @@ class ActsController < ApplicationController
         format.html { render "welcome/index", notice: "There was a problem." }
       end
     end
-    #task = #Click Button = [actname, act_id]
-    # current_user.tasks.create!(user_id: current_user.id,
-    #                            act_id: @act.id
-    #                           )
-
-    # remote: true
-    # link_to "act.name", create_task_act_path(act_id)
-
-    # task = act that user selected from list
-    # kindships = join table between user and act
-    # kindships will have current_user.id and act_id
-    # task.user_id = current_user.id
-
-    #if @task.save
-      # add it to current user's show page (profile list)
-      # will belong to current user through kindship
   end
 
   private

@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :acts
   has_many :services
+  has_many :volunteerships
   has_many :opportunities, through: :volunteerships, class_name: "Service"
-  has_many :tasks, through: :kindships, class_name: "Act"
+  has_many :kindships
+  # has_many :tasks, through: :kindships, :source => "Act"
+  # has_many :tasks, through: :kindships, class_name: "Act"
+  has_many :tasks, through: :kindships, class_name: :act
 
 
   has_attached_file :avatar,
