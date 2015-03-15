@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-10 col-md-offset-1">
     <div class="well well-lg">
       <h1 style="text-align: center">"No act of kindness, however small is ever wasted." Aesop</h1>
     </div>
@@ -10,11 +10,26 @@
 </div>
 
 
-<!-- Button trigger modal -->
+
+
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-5">
+</div>
+</div>
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h3 class="text-primary">Random Acts of Kindness Suggestions</h3>
+<p class="lead">See a random act of kindness you'd like to commit to? Click the button next to it and it will be added to your list of to do items on your dashboard page! Have a great idea for a random act of kindness that's not on the list? Click the "Add to our list" button above!</p>
+  <!-- Button trigger modal -->
 
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     Add to our list
   </button>
+<!--   End Button trigger modal -->
 <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -31,24 +46,25 @@
     </div>
   </div>
 </div>
-<div class="row">
-<div class="col-md-8 col-md-offset-5">
-</div>
-</div>
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
+<!--   End Modal -->
 
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th><h3 class="text-primary">Will you do it?</h3></th>
+      <th><h3 class="text-primary">Random Act of Kindness</h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @acts.each do |act| %>
+      <td><button class="btn btn-primary btn-info"> <%= link_to 'Add to my list', add_task_act_path(act.id), method: :post, :remote => true %></button></td>
+      <td><h4><%= act.title %></h4></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<ul>
-<% @acts.each do |act| %>
-  <li><h3><%= act.title %></h3></li>
-  <button type="button" class="btn btn-default"> <%= link_to act.title, add_task_act_path(act.id), method: :post, :remote => true %>Add to my To Do list</button>
-
-
-<!--   # remote: true
-    # link_to "act.name", create_task_act_path(act_id) -->
-<% end %>
-</ul>
 </div>
 </div>
 
