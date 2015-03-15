@@ -1,8 +1,9 @@
-<%= simple_form_for([Service.new]) do |f| %>
+<%= simple_form_for([Service.new], multipart: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title, label: 'Enter your volunteer opportunity here!' %>
+    <%= f.input :photo %>
     <%= f.input :date, as: :date %>
     <%= f.input :zipcode %>
     <%= f.input :description %>
