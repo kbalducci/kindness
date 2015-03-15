@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :opportunities, through: :volunteerships, class_name: "Service"
   has_many :kindships
   has_many :tasks, through: :kindships, source: :act
+  accepts_nested_attributes_for :acts
 
 
   has_attached_file :avatar,

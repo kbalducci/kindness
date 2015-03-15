@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    tasks = @user.tasks
+    @tasks = @user.tasks
 
   end
 
@@ -29,6 +29,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :user_name, :zipcode, :avatar, :phone, :bio)
+      params.require(:user).permit(:first_name, :last_name, :user_name, :zipcode, :avatar, :phone, :bio, :tasks)
     end
 end
