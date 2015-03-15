@@ -23,6 +23,19 @@ class ServicesController < ApplicationController
     end
   end
 
+  def add_opportunity
+    opportunity = Service.find(params[:id])
+    user_id = current_user.id
+
+    respond_to do |format|
+      if Volunteership.create(service_id: opportunity.id, user_id: user_id)
+        format.html { redirect_to users_path(current_user), notice: 'Volunteer activity was added to your list' }
+      else
+        format.html { render "welcome/index", notice: "There was a problem." }
+      end
+    end
+  end
+
   private
   def service_params
     params.require(:service).permit(:date, :photo, :zipcode, :title, :description, :requirement, :tag_id)

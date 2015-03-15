@@ -30,7 +30,7 @@ class ActsController < ApplicationController
 
     respond_to do |format|
       if Kindship.create(act_id: task.id, user_id: user_id)
-        format.html { redirect_to users_path(current_user), notice: 'Act was successfully created.' }
+        format.html { redirect_to users_path(current_user), notice: 'Act was added to your list.' }
       else
         format.html { render "welcome/index", notice: "There was a problem." }
       end

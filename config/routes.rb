@@ -8,10 +8,11 @@ Rails.application.routes.draw do
       post :add_task
     end
   end
-  resources :services
-    # member do
-    #   get :create_opportunities
-  # end
+  resources :services do
+    member do
+      post :add_opportunity
+    end
+  end
 
 
   root "welcome#index"
