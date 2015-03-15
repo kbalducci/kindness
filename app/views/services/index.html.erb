@@ -16,7 +16,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">New Act</h4>
+          <h4 class="modal-title" id="myModalLabel">New Volunteer Opportunity</h4>
         </div>
         <div class="modal-body">
           <%= render partial: "services/service_form" %>
@@ -31,18 +31,36 @@
 <!-- Button trigger modal -->
 
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Add to our list
+    Add a Volunteer Opportunity
   </button>
 </div>
+
+</div>
+<div> <br />
 </div>
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
-
-<ul>
+</div>
+<div class="row">
+<div class="col-md-12">
 <% @services.each do |service| %>
-  <li><h3><%= service.title %></h3></li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3><%= service.title %></h3>
+        <p><ul>
+          <li>When: <%= service.date %></li>
+          <li>Where: <%= service.zipcode %></li>
+          <li>Requirements: <%= service.requirement %></li>
+          <li>Description: <%= service.description %></li>
+          </p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+
+    </div>
+  </div>
+        <% end %>
 </div>
-</div>
+
 
