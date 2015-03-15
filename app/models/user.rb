@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :acts
   has_many :services
   has_many :volunteerships
-  has_many :opportunities, through: :volunteerships, class_name: "Service"
+  has_many :opportunities, through: :volunteerships, source: :service
   has_many :kindships
   has_many :tasks, through: :kindships, source: :act
   accepts_nested_attributes_for :acts
