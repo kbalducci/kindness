@@ -20,3 +20,11 @@
         list-style-type: none;
     }
 
+    .btn {
+        a {
+            color: white;
+        }
+        a:hover {
+            color: red;
+        }
+    }
