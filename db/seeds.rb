@@ -12,7 +12,8 @@ User.create!([{first_name: "Kate",
             avatar: 'http://kbjsinstaclone.s3.amazonaws.com/users/avatars/000/000/004/thumb/Hello.jpg?1426448326',
             phone: "5127311220",
             email: 'test@me.com',
-            password: 'password'
+            password: 'password',
+            bio: "I want to make a difference by helping other people! I know that the smallest of acts can help brighten someone's day. My goal is to do 1 random act of kindness everyday. I am most interested in volunteering at The Humane Society as well as with Environmental issues."
             },
 
             {first_name: Faker::Name.first_name,
@@ -22,7 +23,8 @@ User.create!([{first_name: "Kate",
             avatar: 'http://kbjsinstaclone.s3.amazonaws.com/users/avatars/000/000/002/thumb/Nature.jpg?1426448046',
             phone: Faker::Number.number(10),
             email: 'test2@me.com',
-            password: 'password'
+            password: 'password',
+            bio: "If you have a lemon, make lemonade. Begin to be now what you will be hereafter. Begin difficult things while they are easy. A thousand-mile journey begins with one step."
             },
 
             {first_name: Faker::Name.first_name,
@@ -32,7 +34,8 @@ User.create!([{first_name: "Kate",
             avatar: 'http://kbjsinstaclone.s3.amazonaws.com/users/avatars/000/000/003/thumb/Success.jpg?1426448202',
             phone: Faker::Number.number(10),
             email: 'test3@me.com',
-            password: 'password'
+            password: 'password',
+            bio: 'Why not go out on a limb? That is where the fruit is Nothing is so exhausting as indecision, and nothing is so futile.'
             },
 
             {first_name: Faker::Name.first_name,
@@ -42,7 +45,8 @@ User.create!([{first_name: "Kate",
             avatar: 'http://kbjsinstaclone.s3.amazonaws.com/users/avatars/000/000/006/thumb/Jellyfish.jpg?1426448660',
             phone: Faker::Number.number(10),
             email: 'test4@me.com',
-            password: 'password'
+            password: 'password',
+            bio: 'Imagine you only have one year to live. What important things would you be doing? How would you be allotting your time to accomplish the most you could? This exercise is one method of going after your priorities. The way to be safe is never to be secure.'
             },
 
             {first_name: Faker::Name.first_name,
@@ -52,7 +56,8 @@ User.create!([{first_name: "Kate",
             avatar: 'http://kbjsinstaclone.s3.amazonaws.com/users/avatars/000/000/005/thumb/ottercams.jpg?1426448542',
             phone: Faker::Number.number(10),
             email: 'test5@me.com',
-            password: 'password'
+            password: 'password',
+            bio: 'Make the most of today. Translate your good intentions into actual deeds. One machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man.'
             }])
 
 Act.create([{ title: 'Let someone go in front of you in line.' },
@@ -67,11 +72,11 @@ Act.create([{ title: 'Let someone go in front of you in line.' },
             { title: 'Use a re-usable glass water bottle.' },
             { title: 'Donate pet food to an animal shelter.' },
             ])
-Service.create([{ title: 'Foster a pet with The Austin Humane Society',
+Service.create([{ title: 'Foster With The Humane Society',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/002/medium/AHS.jpg?1426457447',
                   zipcode: '78752',
-                  description: 'Sometimes, animals aren’t yet ready for our adoption program—like puppies or kittens under eight weeks old. Sometimes, animals get sick or injured and need special care. And other times, our shelter is simply filled to capacity. That’s when our Foster Care program volunteers swoop in to save the day.',
-                  requirement: 'First, you need to attend a Foster Care Orientation The orientation will allow you to learn everything you need to know about caring for a foster animal, while meeting our staff and getting an up-close look at what AHS does. If you are already a volunteer and are interested in fostering, please contact fostercare@austinhumanesociety.org. Sign up now by emailing fostercare@austinhumanesociety.org'
+                  description: 'Sometimes, animals aren’t yet ready for our adoption program—like animals under eight weeks old. Sometimes, animals get injured and need special care. Or, our shelter is filled to capacity. That’s when our Foster Care program volunteers swoop in to save the day.',
+                  requirement: 'First, you need to attend a Foster Care Orientation. The orientation will allow you to learn everything you need to know about caring for a foster animal. Sign up now by emailing fostercare@austinhumanesociety.org'
                   },
                   { title: 'Help Clean Lady Bird Lake',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/011/medium/Lake2.jpg?1426461180',
@@ -83,13 +88,13 @@ Service.create([{ title: 'Foster a pet with The Austin Humane Society',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/004/medium/Meals.jpg?1426458340',
                   zipcode: '78702',
                   description: 'Our community assistance services include home delivered meals for seniors and others with disabilities. Aside from the meal delivery program, Meals on Wheels and More offers "And More" programs designed to keep people healthy and living in their own homes.',
-                  requirement: 'Must be 18 years or older, have a valid drivering license and have access to transportation. For more information, visit http://www.mealsonwheelsandmore.org/volunteer/'
+                  requirement: 'Must be 18 years or older, have a valid driving license and have access to transportation. For more information, visit http://www.mealsonwheelsandmore.org. Volunteer orientation for Meal Delivery Program is every Thursday 12:15p.m. at our central kitchen 3227 E. 5th St. 78702. You must attend an orientation before you start meal delivery. Other volunteer opportunities are also available at the website.'
                   },
                   { title: 'Big Brother/Big Sister of Austin',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/005/medium/Big.jpg?1426458966',
                   zipcode: '78721',
                   description: 'Being a Big Brother or Big Sister is one of the most enjoyable things you’ll ever do, and one of the most fulfilling. You have the opportunity to help shape a child’s future for the better by empowering them to achieve. And the best part is, it’s actually a lot of fun. You and your Little can share the kinds of activities you already like to do.',
-                  requirement: 'Fill out the volunteer application on http://www.bigmentoring.org/site/c.bkLVKdOQLjK6E/b.6458511/k.61F5/Sign_up_to_Volunteer.htm'
+                  requirement: 'Fill out the volunteer application on http://www.bigmentoring.org. Also see the site for more details '
                   },
                   { title: 'Go Fund Me',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/006/medium/fund.jpeg?1426459170',
@@ -108,7 +113,8 @@ Service.create([{ title: 'Foster a pet with The Austin Humane Society',
                   zipcode: '78745',
                   description: 'Volunteers are the heart and soul of the Food Bank. They bring our mission to life. Our volunteers ensure only the safest food leaves our warehouse, keep mobile food pantry lines running smoothly and share our mission at community events throughout the year. Join the 17,000 volunteers who gave a bit of their time last year to make a difference in someone else’s life.',
                   requirement: 'Sign up to volunteer at https://www.austinfoodbank.org/get-involved/volunteer.'
-                  },
+                  }
+
       ])
 
 tags = Tag.create([{ name: 'Animals' },
@@ -166,7 +172,7 @@ Tagging.create([{ act_id: 1,
                   { service_id: 6,
                         tag_id: 6 },
                   { service_id: 7,
-                        tag_id: 7 },
+                        tag_id: 7 }
                   ])
 
 

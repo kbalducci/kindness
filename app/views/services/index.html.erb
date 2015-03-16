@@ -20,7 +20,7 @@
         </div>
         <div class="modal-body">
           <%= render partial: "services/service_form" %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
         </div>
       </div>
     </div>
@@ -38,22 +38,22 @@
 </div>
 <div> <br />
 </div>
+
 <div class="row">
 </div>
+
 <div class="row">
-<div class="col-md-12">
-<% @services.each do |service| %>
-<div class="row">
+  <% @services.each do |service| %>
   <div class="col-sm-6 col-md-4">
+
     <div class="thumbnail">
     <%= image_tag service.photo.url(:medium) %>
       <div class="caption">
         <h3><%= service.title %></h3>
         <p><ul>
-          <li>When: <%= service.date %></li>
           <li>Where: <%= service.zipcode %></li>
-          <li>Requirements: <%= service.requirement %></li>
           <li>Description: <%= service.description %></li>
+          <li>Requirements: <%= service.requirement %></li>
           </p>
 
         <p><button class="btn btn-primary btn-info"><%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true %></button></p>
@@ -62,7 +62,12 @@
 
     </div>
   </div>
-        <% end %>
+  <% end %>
+  </ul>
 </div>
+
+
+
+
 
 
