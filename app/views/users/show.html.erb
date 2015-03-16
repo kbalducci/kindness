@@ -22,7 +22,10 @@
     <div class="well well-lg">
       <h2 style="text-align: center">To Do List</h2>
 
-        <!-- @tasks  -->
+      <% @acts.each do |x| %>
+      <%= x.title %>
+      <% end %>
+
 
     </div>
   </div>

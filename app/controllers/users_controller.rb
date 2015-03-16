@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    byebug
     @user = User.find(params[:id])
-    @tasks = @user.tasks
-
+    # @tasks = @user.tasks
+    # task_id = user.kindships.pluck(:act_id)
+    @acts = Act.where(id: current_user.kindships.pluck(:act_id))
   end
 
   def create
