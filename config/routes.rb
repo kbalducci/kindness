@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :acts do
     member do
       post :add_task
+      post :completed_task
     end
   end
   resources :services do

@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    byebug
     @user = User.find(params[:id])
     # @tasks = @user.tasks
     # task_id = user.kindships.pluck(:act_id)
