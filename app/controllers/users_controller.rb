@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     # @tasks = @user.tasks
     # task_id = user.kindships.pluck(:act_id)
     @acts = Act.where(id: current_user.kindships.pluck(:act_id))
+    @services = Service.where(id: current_user.volunteerships.pluck(:service_id))
   end
 
   def create
