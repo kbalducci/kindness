@@ -25,6 +25,7 @@
         <ul>
           <% @acts_todo.each do |x| %>
             <li><%= x.title %></li>
+                <button class="btn btn-primary btn-info"> <%= link_to 'Completed', completed_task_act_path(x.id), method: :post, :remote => true %></button>
           <% end %>
         </ul>
 

@@ -38,8 +38,8 @@ class ActsController < ApplicationController
   end
 
   def completed_task
-    kindship = Kindship.where(act_id: params[:id], user_id: current_user.id)
-    if kindship.completed.toggle.save
+    kindship = Kindship.where(act_id: params[:id], user_id: current_user.id).first
+    if kindship.toggle(:completed).save
       respond_to do |format|
         format.html { redirect_to users_path(current_user), notice: 'Act was added to your completed list.' }
         format.json
