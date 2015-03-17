@@ -23,7 +23,7 @@
       <h2 style="text-align: center">RAK To Do List</h2>
     </div>
         <ul>
-          <% @acts.each do |x| %>
+          <% @acts_todo.each do |x| %>
             <li><%= x.title %></li>
           <% end %>
         </ul>
@@ -33,6 +33,11 @@
     <div class="well well-lg">
       <h2 style="text-align: center">RAK Completed List</h2>
     </div>
+      <ul>
+        <% @acts_finished.each do |f| %>
+          <li><%= f.title %></li>
+        <% end %>
+      </ul>
   </div>
   <div class="col-md-1">
   </div>

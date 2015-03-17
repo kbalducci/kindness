@@ -20,7 +20,19 @@ class User < ActiveRecord::Base
   :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  def kindships_finished
+    Kindship.where(completed: true, user_id: id).pluck(:act_id)
+  end
+
+  def kindships_todo
+    Kindship.where(completed: false, user_id: id).pluck(:act_id)
+  end
+  # scope :kindships_finished, ->{ Kindship.where(completed: true) }
+  # scope :kindships_todo, -> { Kindship.where(completed: false, user_id: current_user.id).pluck(:act_id)}
+
   def full_name
     "#{first_name} #{last_name}"
   end
+
+
 end
