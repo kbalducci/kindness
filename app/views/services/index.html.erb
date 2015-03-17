@@ -43,7 +43,9 @@
 </div>
 
 <!-- <div class="row"> -->
-  <% @services.each do |service| %>
+<% @services.each_slice(3) do |s| %>
+<div class="row">
+  <% s.each do |service| %>
   <div class="col-sm-6 col-md-4">
 
     <div class="thumbnail">
@@ -63,8 +65,11 @@
     </div>
   </div>
   <% end %>
+
         </ul>
+
 </div>
+<% end %>
 
 
 
