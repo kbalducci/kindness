@@ -27,8 +27,14 @@ class User < ActiveRecord::Base
   def kindships_todo
     Kindship.where(completed: false, user_id: id).pluck(:act_id)
   end
-  # scope :kindships_finished, ->{ Kindship.where(completed: true) }
-  # scope :kindships_todo, -> { Kindship.where(completed: false, user_id: current_user.id).pluck(:act_id)}
+
+  def volunteerships_finished
+    Volunteership.where(completed: true, user_id: id).pluck(:service_id)
+  end
+
+  def volunteerships_todo
+    Volunteership.where(completed: false, user_id: id).pluck(:service_id)
+  end
 
   def full_name
     "#{first_name} #{last_name}"
