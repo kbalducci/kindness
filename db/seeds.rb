@@ -102,7 +102,7 @@ Service.create([{ title: 'Foster With The Humane Society',
                   description: 'The beauty of GoFundMe is that it allows campaign organizers to invite others to take part in their story. Just as we share parts of our lives on Facebook, we also want to share our dreams, pursuits, celebrations and challenges online with crowdfunding. People will always be eager to support others they care about. GoFundMe removes the physical barriers traditionally associated with receiving financial support from the people in our lives.',
                   requirement: 'Go to gofundme.com and start donating today!'
                   },
-                  { title: 'Run/Walk o Break the Silence on Ovarian Cancer',
+                  { title: 'Run/Walk to Break the Silence on Ovarian Cancer',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/007/medium/Nocc.png?1426459776',
                   zipcode: '78758',
                   description: 'Join the Austin Chapter of the National Ovarian Cancer Coalition for its annual Run/Walk. Help raise money and help support those who are fighting Ovarian Cancer or have won their battle and help remember those who lost their fight to Ovarian Cancer.',

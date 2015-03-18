@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :kindships
   has_many :tasks, through: :kindships, source: :act
   accepts_nested_attributes_for :acts
+  accepts_nested_attributes_for :services
 
 
   has_attached_file :avatar,

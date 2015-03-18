@@ -51,7 +51,7 @@
       <h2 style="text-align: center">Volunteering To Do List</h2>
       </div>
         <ul>
-          <% @services.each do |y| %>
+          <% @services_todo.each do |y| %>
             <li><%= y.title %></li>
             <button class="btn btn-primary btn-info"> <%= link_to 'Completed', completed_opportunity_service_path(y.id), method: :post, :remote => true %></button>
           <% end %>

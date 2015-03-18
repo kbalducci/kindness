@@ -10,13 +10,16 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @acts = Act.where(id: current_user.kindships.pluck(:act_id))
-    @acts_finished = Act.where(id: current_user.kindships_finished)
-    @acts_todo = Act.where(id: current_user.kindships_todo)
+    # @acts = Act.where(id: current_user.kindships.pluck(:act_id))
+    @acts = current_user.tasks
+    @acts_finished = current_user.kindships.where(completed: true).map { |k| k.act }
+    # @acts_finished = Act.where(id: current_user.kindships_finished)
+    @acts_todo = current_user.kindships.where(completed: false).map { |k| k.act }
 
-    @services = Service.where(id: current_user.volunteerships.pluck(:service_id))
-    @services_finished = Service.where(id: current_user.volunteerships_finished)
-    @services_todo = Service.where(id: current_user.volunteerships_todo)
+    @services = current_user.opportunities
+
+    @services_finished = current_user.volunteerships.where(completed: true).map { |v| v.service }
+    @services_todo = current_user.volunteerships.where(completed: false).map { |v| v.service }
   end
 
   def create
