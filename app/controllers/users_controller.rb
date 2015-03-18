@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     @services = Service.where(id: current_user.volunteerships.pluck(:service_id))
     @services_finished = Service.where(id: current_user.volunteerships_finished)
-    @services_todo = Service.where(id: current_user.volunteerships_finished)
+    @services_todo = Service.where(id: current_user.volunteerships_todo)
   end
 
   def create
