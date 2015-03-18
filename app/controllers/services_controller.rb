@@ -36,6 +36,19 @@ class ServicesController < ApplicationController
     end
   end
 
+  def completed_opportunity
+    volunteership = Volunteership.where(service_id: params[:id], user_id: current_user.id).first
+    if volunteership.toggle(:completed).save
+      respond_to do |format|
+        format.html { redirect_to users_path(current_user), notice: 'Volunteer opportunity was added to your completed list.' }
+        format.json
+      end
+    else
+      format.html { redirect_to users_path(current_user), notice: "There was a problem."}
+
+    end
+  end
+
   private
   def service_params
     params.require(:service).permit(:date, :photo, :zipcode, :title, :description, :requirement, :tag_id)

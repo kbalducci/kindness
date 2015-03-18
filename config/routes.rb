@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :services do
     member do
       post :add_opportunity
+      post :completed_opportunity
     end
   end
 
