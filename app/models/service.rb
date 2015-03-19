@@ -12,6 +12,10 @@ class Service < ActiveRecord::Base
   :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
+  validates :title, presence: true
+  validates :zipcode, presence: true
+  validates :description, presence: true
+
   def self.tagged_with(name)
     Tag.find_by_name!(name).services
   end

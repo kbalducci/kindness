@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title, label: 'Enter your random act of kindness suggestion here!' %>
+    <%= f.input :title, required: true, label: 'Enter your random act of kindness suggestion here!' %>
     <%= f.association :tags, as: :check_boxes, collection: Tag.name, label_method: :name, value_method: :id, include_blank: false, collection: Tag.all.order('name') %>
   </div>
 

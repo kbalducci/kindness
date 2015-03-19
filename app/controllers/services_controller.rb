@@ -16,9 +16,9 @@ class ServicesController < ApplicationController
         params[:service][:tag_ids].each do |tag_id|
           Tagging.create({ service_id: @service.id, tag_id: tag_id }) unless tag_id.empty?
         end
-        format.html { redirect_to services_path, notice: ' Volunteer Opportunity was successfully created.' }
+        format.html { redirect_to services_path, notice: 'Volunteer Opportunity was successfully created.' }
       else
-        format.html { render "welcome/index", notice: "There was a problem." }
+        format.html { redirect_to services_path, notice: "There was a problem." }
       end
     end
   end

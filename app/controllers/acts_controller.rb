@@ -19,7 +19,7 @@ class ActsController < ApplicationController
         end
         format.html { redirect_to acts_path, notice: 'Act was successfully created.' }
       else
-        format.html { render "welcome/index", notice: "There was a problem." }
+        format.html { redirect_to acts_path, notice: "There was a problem." }
       end
     end
   end
@@ -29,7 +29,7 @@ class ActsController < ApplicationController
     user_id = current_user.id
 
     respond_to do |format|
-      if Kindship.create(act_id: task.id, user_id: user_id)
+      if Kindship.create( act_id: task.id, user_id: user_id )
         format.html { redirect_to users_path(current_user), notice: 'Act was added to your list.' }
       else
         format.html { render "welcome/index", notice: "There was a problem." }
