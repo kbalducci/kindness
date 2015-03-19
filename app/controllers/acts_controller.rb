@@ -19,7 +19,7 @@ class ActsController < ApplicationController
         end
         format.html { redirect_to acts_path, notice: 'Act was successfully created.' }
       else
-        format.html { redirect_to acts_path, notice: "There was a problem." }
+        format.html { redirect_to acts_path, notice: "There was a problem. Please try again." }
       end
     end
   end
@@ -30,9 +30,9 @@ class ActsController < ApplicationController
 
     respond_to do |format|
       if Kindship.create( act_id: task.id, user_id: user_id )
-        format.html { redirect_to users_path(current_user), notice: 'Act was added to your list.' }
+        format.html { redirect_to users_path(current_user), success: 'Act was added to your list.' }
       else
-        format.html { render "welcome/index", notice: "There was a problem." }
+        format.html { render "welcome/index", notice: "There was a problem. Please try again." }
       end
     end
   end
@@ -45,7 +45,7 @@ class ActsController < ApplicationController
         format.json
       end
     else
-      format.html { redirect_to users_path(current_user), notice: "There was a problem."}
+      format.html { redirect_to users_path(current_user), notice: "There was a problem. Please try again."}
 
     end
   end

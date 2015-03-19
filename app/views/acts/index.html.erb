@@ -1,5 +1,18 @@
+<% if flash[:notice] %>
+  <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+  <strong><%= flash[:notice] %></strong>
+</div>
+  <% end %>
+<% if flash[:success] %>
+  <div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong><%= flash[:success] %></strong>
+</div>
+  <% end %>
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
+
     <div class="well well-lg">
       <h1 style="text-align: center">"No act of kindness, however small is ever wasted." Aesop</h1>
     </div>
