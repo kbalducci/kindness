@@ -17,7 +17,7 @@ class ActsController < ApplicationController
         params[:act][:tag_ids].each do |tag_id|
           Tagging.create({ act_id: @act.id, tag_id: tag_id }) unless tag_id.empty?
         end
-        format.html { redirect_to acts_path, notice: 'Act was successfully created.' }
+        format.html { redirect_to acts_path, notice_success: 'Act was successfully created.' }
       else
         format.html { redirect_to acts_path, notice: "There was a problem. Please try again." }
       end
