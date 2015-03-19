@@ -21,6 +21,7 @@ class ActsController < ApplicationController
           flash[:success] = 'Act was successfully created.'
           redirect_to acts_path
         }
+
       else
         format.html {
           flash[:danger] = "There was a problem. Please try again."
@@ -35,10 +36,17 @@ class ActsController < ApplicationController
     user_id = current_user.id
 
     respond_to do |format|
-      if Kindship.create( act_id: task.id, user_id: user_id )
-        format.html { redirect_to users_path(current_user), success: 'Act was added to your list.' }
+      @kindship = Kindship.new( act_id: task.id, user_id: user_id )
+      if @kindship.save
+        format.html {
+          flash[:success] = 'Act was added to your list.'
+          redirect_to user_path(current_user)
+        }
       else
-        format.html { render "welcome/index", notice: "There was a problem. Please try again." }
+        format.html {
+          flash[:danger] = "There was a problem. Please try again."
+          render "welcome/index"
+        }
       end
     end
   end
@@ -47,11 +55,11 @@ class ActsController < ApplicationController
     kindship = Kindship.where(act_id: params[:id], user_id: current_user.id).first
     if kindship.toggle(:completed).save
       respond_to do |format|
-        format.html { redirect_to users_path(current_user), notice: 'Act was added to your completed list.' }
-        format.json
+        format.html { redirect_to users_path(current_user), success: 'Act was added to your completed list.' }
+        format.js
       end
     else
-      format.html { redirect_to users_path(current_user), notice: "There was a problem. Please try again."}
+      format.html { redirect_to users_path(current_user), danger: "There was a problem. Please try again."}
 
     end
   end
