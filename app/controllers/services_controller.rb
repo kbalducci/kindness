@@ -16,9 +16,14 @@ class ServicesController < ApplicationController
         params[:service][:tag_ids].each do |tag_id|
           Tagging.create({ service_id: @service.id, tag_id: tag_id }) unless tag_id.empty?
         end
-        format.html { redirect_to services_path, notice: 'Volunteer Opportunity was successfully created.' }
+        format.html {
+          flash[:success] = 'Volunteer Opportunity was successfully created.'
+          redirect_to services_path
+        }
       else
-        format.html { redirect_to services_path, notice: "There was a problem." }
+        format.html {
+          flash[:danger] = 'There was a problem.'
+          redirect_to services_path }
       end
     end
   end
@@ -28,10 +33,17 @@ class ServicesController < ApplicationController
     user_id = current_user.id
 
     respond_to do |format|
-      if Volunteership.create(service_id: opportunity.id, user_id: user_id)
-        format.html { redirect_to users_path(current_user), notice: 'Volunteer activity was added to your list' }
+      @volunteership = Volunteership.new( service_id: opportunity.id, user_id: user_id )
+      if @volunteership.save
+        format.html {
+          flash[:success] = 'Volunteer activity was added to your list.'
+          redirect_to services_path
+        }
       else
-        format.html { render "welcome/index", notice: "There was a problem." }
+        format.html {
+          flash[:danger] = "There was a problem. Please try again."
+          redirect_to services_path
+        }
       end
     end
   end
@@ -41,7 +53,7 @@ class ServicesController < ApplicationController
     if volunteership.toggle(:completed).save
       respond_to do |format|
         format.html { redirect_to users_path(current_user), notice: 'Volunteer opportunity was added to your completed list.' }
-        format.json
+        format.js
       end
     else
       format.html { redirect_to users_path(current_user), notice: "There was a problem."}

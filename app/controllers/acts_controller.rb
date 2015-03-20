@@ -40,12 +40,12 @@ class ActsController < ApplicationController
       if @kindship.save
         format.html {
           flash[:success] = 'Act was added to your list.'
-          redirect_to user_path(current_user)
+          redirect_to acts_path
         }
       else
         format.html {
           flash[:danger] = "There was a problem. Please try again."
-          render "welcome/index"
+          redirect_to acts_path
         }
       end
     end
