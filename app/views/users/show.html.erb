@@ -54,8 +54,8 @@
       </div>
         <ul>
           <% @services_todo.each do |y| %>
-            <li><%= y.title %></li>
-            <button class="btn btn-primary btn-info"> <%= link_to 'Completed', completed_opportunity_service_path(y.id), method: :post, :remote => true %></button>
+            <li class='services-finished-title'><span class="service-text"><%= y.title %></span>
+            <button class="btn btn-primary btn-info unfinished-service"> <%= link_to 'Completed', completed_opportunity_service_path(y.id), method: :post, :remote => true %></button></li>
           <% end %>
         </ul>
 
@@ -64,7 +64,7 @@
     <div class="well well-lg">
       <h2 style="text-align: center">Volunteering Completed List</h2>
     </div>
-      <ul>
+      <ul class="services-finished-list">
         <% @services_finished.each do |s| %>
           <li><%= s.title %></li>
         <% end %>
