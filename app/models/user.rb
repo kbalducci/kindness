@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :acts
   accepts_nested_attributes_for :services
   geocoded_by :zipcode
+  after_validation :geocode, :if => :zipcode_changed?
 
 
   has_attached_file :avatar,

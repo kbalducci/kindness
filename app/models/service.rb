@@ -4,6 +4,7 @@ class Service < ActiveRecord::Base
   has_many :tags, through: :taggings
   accepts_nested_attributes_for :tags
   geocoded_by :zipcode
+  after_validation :geocode, :if => :zipcode_changed?
 
   has_attached_file :photo,
   :styles => { :medium => "300x300>", :thumb => "100x100>" },
