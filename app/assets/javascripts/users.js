@@ -12,7 +12,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.unfinished-service').on('click', function (e) {
     var serviceItem = this.parentNode;
-    var serviceTitle = serviceItem.children[2].innerHTML;
+    var serviceTitle = serviceItem.children[1].innerHTML;
     $(serviceItem).hide();
     $(".services-finished-list").append("<li class='services-finished-title'>" + "<span class='glyphicon glyphicon-ok'>" + " " + serviceTitle + "</li>")
   });

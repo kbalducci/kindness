@@ -56,11 +56,10 @@
         <ul>
           <% @services_todo.each do |y| %>
             <li class='list-unstyled services-finished-title' >
-            <span class="glyphicon glyphicon-unchecked unfinished-service" aria-hidden="true" >
-            <%= link_to completed_opportunity_service_path(y.id), method: :post, :remote => true  do %>
-            </span>
-            <% end %>
-            <span class="service-text"><%= y.title %></span>
+              <%= link_to completed_opportunity_service_path(y.id), method: :post, :remote => true, class: "btn btn-info unfinished-service" do %>
+                <i class="glyphicon glyphicon-unchecked "></i>
+              <% end %>
+                <span class="service-text"><%= y.title %></span>
             </li>
             <br />
           <% end %>
