@@ -24,8 +24,14 @@
     </div>
         <ul class=" list-unstyled acts-unfinished-list">
           <% @acts_todo.each do |x| %>
-            <li class="acts-unfinished-title"><button class="btn btn-primary btn-info unfinished"> <%= link_to 'Completed', completed_task_act_path(x.id), method: :post, :remote => true %></button><span class="act-text"><%= x.title %></span>
+
+            <li class='list-unstyled acts-unfinished-title' >
+              <%= link_to completed_task_act_path(x.id), method: :post, :remote => true, class: "btn btn-info unfinished" do %>
+                <i class="glyphicon glyphicon-unchecked "></i>
+              <% end %>
+                <span class="act-text"><%= x.title %></span>
             </li>
+
             </br>
 
           <% end %>
