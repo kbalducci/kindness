@@ -5,7 +5,7 @@ $(document).ready(function(){
     var listItem = this.parentNode;
     var actTitle = listItem.children[1].innerHTML;
     $(listItem).hide();
-    $(".acts-finished-list").append("<li class='acts-finished-title'>" + actTitle + "</li>")
+    $(".acts-finished-list").append("<li class='acts-finished-title'>" + "<span class='glyphicon glyphicon-ok'>" + " " + actTitle + "</li>")
   });
 });
 
