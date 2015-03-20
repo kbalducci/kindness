@@ -29,4 +29,15 @@
         }
     }
 
+    .unfinished-service {
+        background-color: white !important;
+
+        a {
+            color: black !important;
+        }
+        a:hover {
+            color: red important;
+        }
+    }
+
 
