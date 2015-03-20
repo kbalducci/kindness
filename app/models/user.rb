@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :tasks, through: :kindships, source: :act
   accepts_nested_attributes_for :acts
   accepts_nested_attributes_for :services
+  geocoded_by :zipcode
 
 
   has_attached_file :avatar,
