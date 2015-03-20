@@ -1,6 +1,11 @@
 class ServicesController < ApplicationController
   def index
+    # @services = Service.all
+  if params[:search].present?
+    @services = Service.near(params[:search], 50)
+  else
     @services = Service.all
+  end
   end
 
   def show

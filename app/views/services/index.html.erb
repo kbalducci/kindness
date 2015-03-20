@@ -47,8 +47,15 @@
   </p>
 <% end %>
 
-<!-- end of search -->
+<!-- end of search  field-->
+<!-- Start search sort -->
+<% @services.each do |location| %>
+  <%= location.nearbys(10).each do |n| %>
+    <%= n.title %>
+<% end %>
+<% end %>
 
+<!-- End search sort -->
 
 <div class="row">
 </div>
