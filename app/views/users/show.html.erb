@@ -22,11 +22,11 @@
     <div class="well well-lg">
       <h2 style="text-align: center">RAK To Do List</h2>
     </div>
-        <ul class="acts-unfinished-list">
+        <ul class=" list-unstyled acts-unfinished-list">
           <% @acts_todo.each do |x| %>
-            <li class="acts-unfinished-title"><span class="act-text"><%= x.title %></span>
-              <button class="btn btn-primary btn-info unfinished"> <%= link_to 'Completed', completed_task_act_path(x.id), method: :post, :remote => true %></button>
+            <li class="acts-unfinished-title"><button class="btn btn-primary btn-info unfinished"> <%= link_to 'Completed', completed_task_act_path(x.id), method: :post, :remote => true %></button><span class="act-text"><%= x.title %></span>
             </li>
+            </br>
 
           <% end %>
         </ul>
@@ -36,9 +36,10 @@
     <div class="well well-lg">
       <h2 style="text-align: center">RAK Completed List</h2>
     </div>
-      <ul class="acts-finished-list">
+      <ul class=" list-unstyled acts-finished-list">
         <% @acts_finished.each do |f| %>
-          <li class="acts-finished-title"><%= f.title %></li>
+          <li class="acts-finished-title"><span class="glyphicon glyphicon-ok"></span> <%= f.title %></li>
+          <br />
         <% end %>
       </ul>
   </div>
@@ -54,8 +55,14 @@
       </div>
         <ul>
           <% @services_todo.each do |y| %>
-            <li class='services-finished-title'><span class="service-text"><%= y.title %></span>
-            <button class="btn btn-primary btn-info unfinished-service"> <%= link_to 'Completed', completed_opportunity_service_path(y.id), method: :post, :remote => true %></button></li>
+            <li class='list-unstyled services-finished-title' >
+            <span class="glyphicon glyphicon-unchecked unfinished-service" aria-hidden="true" >
+            <%= link_to completed_opportunity_service_path(y.id), method: :post, :remote => true  do %>
+            </span>
+            <% end %>
+            <span class="service-text"><%= y.title %></span>
+            </li>
+            <br />
           <% end %>
         </ul>
 
@@ -64,9 +71,10 @@
     <div class="well well-lg">
       <h2 style="text-align: center">Volunteering Completed List</h2>
     </div>
-      <ul class="services-finished-list">
+      <ul class="list-unstyled services-finished-list">
         <% @services_finished.each do |s| %>
-          <li><%= s.title %></li>
+          <li><span class="glyphicon glyphicon-ok"></span> <%= s.title %></li>
+          <br />
         <% end %>
       </ul>
   </div>
