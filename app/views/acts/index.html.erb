@@ -51,6 +51,7 @@
     <tr>
       <th><h3 class="text-primary">Will you do it?</h3></th>
       <th><h3 class="text-primary">Random Act of Kindness</h3></th>
+      <th><h3 class="text-primary">Tags</h3></th>
     </tr>
   </thead>
   <tbody>
@@ -58,6 +59,7 @@
     <% @acts.each do |act| %>
       <td><button class="btn btn-primary btn-info"> <%= link_to 'Add to my list', add_task_act_path(act.id), method: :post %></button></td>
       <td><h4><%= act.title %></h4></td>
+      <td><h4><%= act.tags.name %></h4></td>
     </tr>
     <% end %>
   </tbody>

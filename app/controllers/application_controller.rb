@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up).push(:first_name, :last_name, :user_name, :zipcode, :phone, :bio, :avatar)
   end
 
+  def after_sign_in_path_for(resource)
+    user_path(current_user)
+  end
+
 end

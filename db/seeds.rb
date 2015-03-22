@@ -134,14 +134,14 @@ Service.create([{ title: 'Foster With The Humane Society',
 
       ])
 
-tags = Tag.create([{ name: 'Animals' },
-                  { name: 'Environment' },
-                  { name: 'Elderly' },
-                  { name: 'Youth' },
-                  { name: 'Monetary' },
-                  { name: 'Medical' },
-                  { name: 'Food' },
-                  { name: 'General'}])
+Tag.create([{ name: 'Animals' },
+            { name: 'Environment' },
+            { name: 'Elderly' },
+            { name: 'Youth' },
+            { name: 'Monetary' },
+            { name: 'Medical' },
+            { name: 'Food' },
+            { name: 'General'}])
 
 Tagging.create([{ act_id: 1,
                   tag_id: 8
