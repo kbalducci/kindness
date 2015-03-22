@@ -42,25 +42,17 @@
 <!-- Form for search bar by location -->
 <%= form_tag services_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
+    <%= text_field_tag :search, params[:search], placeholder: "Zipcode"  %>
+    <%= submit_tag "Search Near", :name => nil, class: 'btn btn-info btn-sm' %>
+    <%= link_to "Reset", services_path, class: 'btn btn-info btn-sm' %>
   </p>
 <% end %>
-
 <!-- end of search  field-->
-<!-- Start search sort -->
-<% @services.each do |location| %>
-  <%= location.nearbys(10).each do |n| %>
-    <%= n.title %>
-<% end %>
-<% end %>
-
-<!-- End search sort -->
 
 <div class="row">
 </div>
 
-<!-- <div class="row"> -->
+
 <% @services.each_slice(3) do |s| %>
 <div class="row">
   <% s.each do |service| %>
@@ -76,18 +68,56 @@
           <li>Requirements: <%= service.requirement %></li>
           </p>
 
-        <p><button class="btn btn-primary btn-info"><%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true %></button></p>
+        <p><%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true, class: "btn btn-primary btn-info" %></p>
+        <p><button type="button" class="btn btn-primary " data-toggle="modalDetails" data-target="#myModalDetails">
+          See Details
+        </button>
+        </p>
 
       </div>
 
     </div>
   </div>
-  <% end %>
+    <% end %>
 
         </ul>
 
 </div>
 <% end %>
+
+
+  <!-- Modal - Details -->
+    <div class="modalDetails fade" id="myModalDetails" tabindex="-1" role="dialog" aria-labelledby="myModalDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New Volunteer Opportunity</h4>
+        </div>
+        <div class="modal-body">
+
+        <% @services.each_slice(3) do |s| %>
+<div class="row">
+  <% s.each do |service| %>
+  <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail">
+    <%= image_tag service.photo.url(:medium) %>
+      <div class="caption">
+        <h3><%= service.title %></h3>
+        <p><ul>
+          <li>Where: <%= service.zipcode %></li>
+          <li>Description: <%= service.description %></li>
+          <li>Requirements: <%= service.requirement %></li>
+          </p>
+        <% end %>
+        <% end %>
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
