@@ -6,16 +6,9 @@
   <div class="col-md-8">
   <div class="jumbotron">
   </div>
-
-    <div class="welcome-text">
-      <h1>Welcome to Lift Up, a place where people come to spread kindness and help the causes they feel passionate about. </h1>
-
-      <h3>How it works:</h3>
-      <p>Are you an individual looking to make a difference? Then sign on up and choose random acts of kindness (RAKs) and volunteer opportunities to add to your to do list. Have a great idea for a random act others may enjoy? Add it to our list of possible acts! Or are you an organization that needs some help? Post your volunteers needed advertisement.</p>
-
-      <br/>
-  </div>
-
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
     <% if user_signed_in? %>
       <h1>Start making a difference today!</h1>
     <% else %>
@@ -23,22 +16,30 @@
   </div>
 </div>
 <div class="row">
-  <br />
-</div>
-<div class="row">
-  <div class="col-md-2 col-md-offset-5">
-      <%= link_to('Sign In Now', new_user_session_path, class: "btn btn-info btn-lg")%>
+  <div class="col-md-2 col-md-offset-4">
+    <%= link_to('Sign In Now', new_user_session_path, class: "btn btn-info btn-lg")%>
   </div>
-</div>
-<div class="row">
-  <br />
-</div>
-<div class="row">
-  <div class="col-md-2 col-md-offset-5">
+  <div class="col-md-2">
       <%= link_to('Sign Up Now', new_user_registration_path, class: "btn btn-info btn-lg")%>
   </div>
 </div>
     <% end %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="welcome-text">
+      <h1>Welcome to Lift Up, a place where people come to spread kindness and help the causes they feel passionate about. </h1>
+
+      <h3>How it works:</h3>
+      <p>Are you an individual looking to make a difference? Then sign on up and choose random acts of kindness (RAKs) and volunteer opportunities to add to your to do list. Have a great idea for a random act others may enjoy? Add it to our list of possible acts! Or are you an organization that needs some help? Post your volunteers needed advertisement.</p>
+
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 </div>
