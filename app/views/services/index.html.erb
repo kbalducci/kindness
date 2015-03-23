@@ -54,11 +54,16 @@
   <% s.each_with_index do |service, column| %>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-    <%= image_tag service.photo.url(:medium) %>
+    <div class="thumb-image">
+    <%= image_tag service.photo.url(:medium), class: "serve-pic" %>
+    </div>
       <div class="caption">
+        <div class="caption-title">
         <h3><%= service.title %></h3>
-        <p><%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true, class: "btn btn-primary btn-info" %></p>
-        <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="<%= "#myModalDetails#{row}-#{column}" %>" >See Details</button></p>
+        </div>
+        <br />
+        <%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true, class: "btn btn-primary btn-info" %>
+        <button type="button" class="btn btn-primary button-details" data-toggle="modal" data-target="<%= "#myModalDetails#{row}-#{column}" %>" >More Details</button>
 
 <!--       </div>
     </div>
