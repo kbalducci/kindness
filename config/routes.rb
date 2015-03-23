@@ -3,19 +3,20 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
+
   resources :acts do
     member do
       post :add_task
       post :completed_task
     end
   end
+
   resources :services do
     member do
       post :add_opportunity
       post :completed_opportunity
     end
   end
-
 
   root "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
