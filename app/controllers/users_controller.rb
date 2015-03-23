@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @title = "Dashboard"
     @user = User.find(params[:id])
 
     # @acts = Act.where(id: current_user.kindships.pluck(:act_id))
