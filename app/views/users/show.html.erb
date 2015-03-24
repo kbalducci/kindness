@@ -14,21 +14,15 @@
 <br/>
 
 <div class="row">
-<!--   <div class="col-md-3">
-    <div class="well well-lg">
-      <ul class="user-list">
-        <li class="user-info"><%= image_tag @user.avatar.url(:thumb) %></li>
-        <li class="user-info"><h4>User Name: <%= @user.user_name %></h4></li>
-        <li class="user-info"><h4>Bio:<%= @user.bio %></h4></li>
-      </ul>
-    </div>
-  </div> -->
-
-  <div class="col-md-5 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1">
     <div class="well well-lg">
       <h2 style="text-align: center">RAK To Do List</h2>
     </div>
         <ul class=" list-unstyled acts-unfinished-list">
+        <% if @acts_todo == [] %>
+          <p> Add some RAKs to your ToDo List!</p>
+
+        <% else %>
           <% @acts_todo.each do |x| %>
 
             <li class='list-unstyled acts-unfinished-title' >
@@ -41,10 +35,11 @@
             </br>
 
           <% end %>
+        <% end %>
         </ul>
 
   </div>
-  <div class="col-md-5">
+  <div class="col-md-4 col-md-offset-1">
     <div class="well well-lg">
       <h2 style="text-align: center">RAK Completed List</h2>
     </div>
@@ -59,7 +54,7 @@
 </div>
 <div class="row">
 
-  <div class="col-md-5 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1">
     <div class="well well-lg">
       <h2 style="text-align: center">Volunteering To Do List</h2>
       </div>
@@ -76,7 +71,7 @@
         </ul>
 
   </div>
-  <div class="col-md-5">
+  <div class="col-md-4 col-md-offset-1">
     <div class="well well-lg">
       <h2 style="text-align: center">Volunteering Completed List</h2>
     </div>
