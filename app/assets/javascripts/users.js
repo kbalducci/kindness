@@ -7,9 +7,7 @@ $(document).ready(function(){
     $(listItem).hide();
     $(".acts-finished-list").append("<li class='acts-finished-title'>" + "<span class='glyphicon glyphicon-ok'>" + " " + actTitle + "</li>")
   });
-});
 
-$(document).ready(function(){
   $('.unfinished-service').on('click', function (e) {
     var serviceItem = this.parentNode;
     var serviceTitle = serviceItem.children[1].innerHTML;

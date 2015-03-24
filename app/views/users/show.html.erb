@@ -20,7 +20,7 @@
     </div>
         <ul class="list-unstyled acts-unfinished-list">
         <% if @acts_todo == [] %>
-          <p> Oh no! You don't have any Random Acts of Kindness (RAKs) on your list yet. Click <%= link_to 'here', acts_path %> to add one! </p>
+          <p> Oh no! You don't have any Random Acts of Kindness (RAKs) on your list. Click <%= link_to 'here', acts_path %> to add one! </p>
 
         <% else %>
           <% @acts_todo.each do |x| %>
@@ -44,9 +44,14 @@
       <h2 style="text-align: center">RAK Completed List</h2>
     </div>
       <ul class="list-unstyled acts-finished-list">
+      <% if @acts_finished == [] %>
+          <p> Have you finished any of the RAKs on your To Do list? If so, click the check box next to it to mark it as complete! </p>
+
+        <% else %>
         <% @acts_finished.each do |f| %>
           <li class="acts-finished-title"><span class="glyphicon glyphicon-ok"></span> <%= f.title %></li>
           <br />
+        <% end %>
         <% end %>
       </ul>
   </div>
@@ -60,7 +65,7 @@
       </div>
         <ul class="list-unstyled">
         <% if @services_todo == [] %>
-          <p> Oh no! You don't have any Volunteer Opportunities on your list yet. Click <%= link_to 'here', services_path %> to add one! </p>
+          <p> Oh no! You don't have any Volunteer Opportunities on your list. Click <%= link_to 'here', services_path %> to add one! </p>
         <% else %>
           <% @services_todo.each do |y| %>
             <li class='list-unstyled services-finished-title' >
@@ -80,10 +85,14 @@
       <h2 style="text-align: center">Volunteering Completed List</h2>
     </div>
       <ul class="list-unstyled services-finished-list">
+      <% if @services_finished == [] %>
+          <p> Have you finished any of the Volunteer Opportunities on your To Do list? If so, click the check box next to it to mark it as complete! </p>
+        <% else %>
         <% @services_finished.each do |s| %>
           <li><span class="glyphicon glyphicon-ok"></span> <%= s.title %></li>
           <br />
         <% end %>
+      <% end %>
       </ul>
   </div>
   <div class="col-md-1">
