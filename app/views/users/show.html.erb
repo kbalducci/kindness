@@ -18,9 +18,9 @@
     <div class="well well-lg">
       <h2 style="text-align: center">RAK To Do List</h2>
     </div>
-        <ul class=" list-unstyled acts-unfinished-list">
+        <ul class="list-unstyled acts-unfinished-list">
         <% if @acts_todo == [] %>
-          <p> Add some RAKs to your ToDo List!</p>
+          <p> Oh no! You don't have any Random Acts of Kindness (RAKs) on your list yet. Click <%= link_to 'here', acts_path %> to add one! </p>
 
         <% else %>
           <% @acts_todo.each do |x| %>
@@ -43,7 +43,7 @@
     <div class="well well-lg">
       <h2 style="text-align: center">RAK Completed List</h2>
     </div>
-      <ul class=" list-unstyled acts-finished-list">
+      <ul class="list-unstyled acts-finished-list">
         <% @acts_finished.each do |f| %>
           <li class="acts-finished-title"><span class="glyphicon glyphicon-ok"></span> <%= f.title %></li>
           <br />
@@ -58,7 +58,10 @@
     <div class="well well-lg">
       <h2 style="text-align: center">Volunteering To Do List</h2>
       </div>
-        <ul>
+        <ul class="list-unstyled">
+        <% if @services_todo == [] %>
+          <p> Oh no! You don't have any Volunteer Opportunities on your list yet. Click <%= link_to 'here', services_path %> to add one! </p>
+        <% else %>
           <% @services_todo.each do |y| %>
             <li class='list-unstyled services-finished-title' >
               <%= link_to completed_opportunity_service_path(y.id), method: :post, :remote => true, class: "btn btn-info unfinished-service" do %>
@@ -68,6 +71,7 @@
             </li>
             <br />
           <% end %>
+        <% end %>
         </ul>
 
   </div>
