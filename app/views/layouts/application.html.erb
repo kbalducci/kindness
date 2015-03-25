@@ -15,7 +15,7 @@
   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<div class="wrap">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -25,9 +25,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'My Dashboard', user_path(current_user) %></li>
-          <li><%= link_to 'RAKs', acts_path %></li>
+          <li><abbr title="Random Acts of Kindness"><%= link_to 'RAKs', acts_path %></abbr></li>
           <li><%= link_to 'Volunteer', services_path %></li>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
 
@@ -55,7 +54,8 @@
 <%= yield %>
 </div>
 </div>
-<footer class="footer navbar navbar-inverse">
+</div>
+<!-- <footer class="footer navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
 
@@ -63,7 +63,7 @@
     </div>
     </div>
   </div>
-</footer>
+</footer> -->
 
 
 </body>
