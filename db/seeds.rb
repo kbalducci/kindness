@@ -130,9 +130,20 @@ Service.create([{ title: 'Foster With The Humane Society',
                   description: 'Volunteers are the heart and soul of the Food Bank. They bring our mission to life. Our volunteers ensure only the safest food leaves our warehouse, keep mobile food pantry lines running smoothly and share our mission at community events throughout the year. Join the 17,000 volunteers who gave a bit of their time last year to make a difference in someone else’s life.',
                   requirement: 'Sign up to volunteer at https://www.austinfoodbank.org/get-involved/volunteer.',
                   user_id: 2
-                  }
-
-      ])
+                  },
+                  { title: 'Pets 90210',
+                  photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/010/medium/pets.jpeg?1427298528',
+                  zipcode: '90210',
+                  description: 'Pets 90210 believes that shelter pets are perfect pets. Come help animals get adopted, spend time with the cats and dogs, or volunteer at our pet adoption sites to help showcase our perfect pets.',
+                  requirement: 'If you would like to volunteer, please contact bcrowe@kenquest.com or call Bill Crowe at 310-887-7070',
+                  user_id: 2 },
+                  { title: 'Camp Arrowhead',
+                  photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/011/medium/camp.jpg?1427299125',
+                  zipcode: 01760,
+                  description: 'Located in Natick, MA on the wooded shores of Lake Cochituate, Camp Arrowhead offers a six-week day camp and one-week residential camp that serves children and adults with special needs. Since 1958, our campers have enjoyed a warm and caring environment where their individual needs are met, while they learn skills to help promote sociability and independence.',
+                  requirement: 'Volunteering at Camp Arrowhead is a truly rewarding experience.  If you will be 14 years or older by the end of summer 2015 and would like the opportunity to volunteer, please consider obtaining an application for the summer at our website: http://camparrowheadnatick.com/volunteers/',
+                  user_id: 2 }
+            ])
 
 Tag.create([{ name: 'Animals' },
             { name: 'Environment' },
@@ -189,7 +200,11 @@ Tagging.create([{ act_id: 1,
                   { service_id: 6,
                         tag_id: 6 },
                   { service_id: 7,
-                        tag_id: 7 }
+                        tag_id: 7 },
+                  { service_id: 8,
+                        tag_id: 1 },
+                  { service_id: 9,
+                        tag_id: 4 }
                   ])
 
 
