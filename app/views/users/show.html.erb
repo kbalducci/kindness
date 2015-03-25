@@ -45,7 +45,7 @@
     </div>
       <ul class="list-unstyled acts-finished-list">
       <% if @acts_finished == [] %>
-          <p> Have you finished any of the RAKs on your To Do list? If so, click the check box next to it to mark it as complete! </p>
+          <p class="empty-blurb"> Have you finished any of the RAKs on your To Do list? If so, click the check box next to it to mark it as complete! </p>
 
         <% else %>
         <% @acts_finished.each do |f| %>
