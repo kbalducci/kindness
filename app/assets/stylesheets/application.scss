@@ -74,7 +74,7 @@
       bottom: 0 !important;
     }
 
-    .thumbnail {
+    .thumbnail-grid {
         height: 350px;
     }
 
@@ -82,15 +82,19 @@
         float: right;
     }
 
-    .thumb-image {
+    .caption-grid {
+        padding: 10px;
+    }
+
+    .thumb-image-grid {
         height: 160px;
         max-width: 360px;
         display: block;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
     }
 
-    .serve-pic {
+    .serve-pic-grid {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -101,7 +105,7 @@
         padding: 10px;
     }
 
-    .caption-title {
+    .caption-title-grid {
         height: 60px;
     }
 
@@ -121,6 +125,13 @@
     .dataTables_length {
         display: none;
     }
+
+    .modal-details {
+        font-size: 16px;
+        line-height: 1.6
+    }
+
+// for footer
     // body {
     //     height: 100%;
     // }

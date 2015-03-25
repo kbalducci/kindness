@@ -2,6 +2,8 @@ class ActsController < ApplicationController
 
   def index
     @acts = Act.all
+    # act_id = Act.find
+    # @kindship = Kindship.where(user_id: current_user, act_id: Act.find(params[:id]))
   end
 
   def show

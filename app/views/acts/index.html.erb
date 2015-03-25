@@ -57,7 +57,7 @@
   <tbody>
     <tr>
     <% @acts.each do |act| %>
-      <td><button class="btn btn-primary btn-info"> <%= link_to 'Add to my list', add_task_act_path(act.id), method: :post %></button></td>
+      <td><%= link_to 'Add to my list', add_task_act_path(act.id), method: :post, class: "btn btn-primary btn-info add-task" %></td>
       <td><h4><%= act.title %></h4></td>
       <td><h4><%= act.tags.first.name %></h4></td>
 

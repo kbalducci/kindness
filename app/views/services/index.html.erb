@@ -65,16 +65,16 @@
 <div class="row">
   <% s.each_with_index do |service, column| %>
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <div class="thumb-image">
-    <%= image_tag service.photo.url(:medium), class: "serve-pic" %>
+    <div class="thumbnail thumbnail-grid">
+    <div class="thumb-image-grid">
+    <%= image_tag service.photo.url(:medium), class: "serve-pic-grid" %>
     </div>
-      <div class="caption">
-        <div class="caption-title">
+      <div class="caption-grid">
+        <div class="caption-title-grid">
         <h3><%= service.title %></h3>
         </div>
         <br />
-        <%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, :remote => true, class: "btn btn-primary btn-info" %>
+        <%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, class: "btn btn-primary btn-info" %>
         <button type="button" class="btn btn-primary button-details" data-toggle="modal" data-target="<%= "#myModalDetails#{row}-#{column}" %>" >More Details</button>
 
 
@@ -85,16 +85,16 @@
     <div class="modal-content" for"<%= "#myModalDetails#{row}-#{column}" %>">
       <div class="modal-header" for"<%= "#myModalDetails#{row}-#{column}" %>">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" for"<%= "#myModalDetails#{row}-#{column}" %>">×</button>
-        <h4 class="modal-title" for"<%= "#myModalDetails#{row}-#{column}" %>">Modal title</h4>
+        <h3 class="modal-title" for"<%= "#myModalDetails#{row}-#{column}" %>"><%= service.title %></h3>
       </div>
       <div class="modal-body" for"<%= "#myModalDetails#{row}-#{column}" %>">
-        <h1> More Details Model </h1>
+        <!-- <h1> More Details Model </h1> -->
         <div class="thumbnail">
           <%= image_tag service.photo.url(:medium) %>
         <div class="caption">
         <h3><%= service.title %></h3>
         <p>
-        <ul>
+        <ul class="modal-details">
           <li>Where: <%= service.zipcode %></li>
           <li>Description: <%= service.description %></li>
           <li>Requirements: <%= service.requirement %></li>
@@ -103,11 +103,10 @@
         </div>
         </div>
 
-        <h1>End of Modal details</h1>
+      <!--   <h1>End of Modal details</h1> -->
       </div>
       <div class="modal-footer" for"<%= "#myModalDetails#{row}-#{column}" %>">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, class: "btn btn-primary btn-info" %>
       </div>
     </div>
   </div>
