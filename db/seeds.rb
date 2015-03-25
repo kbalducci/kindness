@@ -139,7 +139,7 @@ Service.create([{ title: 'Foster With The Humane Society',
                   user_id: 2 },
                   { title: 'Camp Arrowhead',
                   photo: 'http://kbjsinstaclone.s3.amazonaws.com/services/photos/000/000/011/medium/camp.jpg?1427299125',
-                  zipcode: 01760,
+                  zipcode: '01760',
                   description: 'Located in Natick, MA on the wooded shores of Lake Cochituate, Camp Arrowhead offers a six-week day camp and one-week residential camp that serves children and adults with special needs. Since 1958, our campers have enjoyed a warm and caring environment where their individual needs are met, while they learn skills to help promote sociability and independence.',
                   requirement: 'Volunteering at Camp Arrowhead is a truly rewarding experience.  If you will be 14 years or older by the end of summer 2015 and would like the opportunity to volunteer, please consider obtaining an application for the summer at our website: http://camparrowheadnatick.com/volunteers/',
                   user_id: 2 }
