@@ -86,7 +86,11 @@
       <div class="caption-grid">
         <div class="caption-title-grid">
         <h3><%= service.title %></h3>
+          <% if params[:search].present? %>
+            <h4><%= service.distance.to_f.round(2) %> miles away</h4>
+          <% end %>
         </div>
+        <br />
         <br />
         <%= link_to 'Add to my list', add_opportunity_service_path(service.id), method: :post, class: "btn btn-primary btn-info" %>
         <button type="button" class="btn btn-primary button-details" data-toggle="modal" data-target="<%= "#myModalDetails#{row}-#{column}" %>" >More Details</button>
