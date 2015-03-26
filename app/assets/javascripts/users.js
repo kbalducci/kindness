@@ -13,6 +13,7 @@ $(document).ready(function(){
     var serviceItem = this.parentNode;
     var serviceTitle = serviceItem.children[1].innerHTML;
     $(serviceItem).hide();
+    $(".service-comp-empty").hide();
     $(".services-finished-list").append("<li class='services-finished-title'>" + "<span class='glyphicon glyphicon-ok'>" + " " + serviceTitle + "</li>")
   });
 });

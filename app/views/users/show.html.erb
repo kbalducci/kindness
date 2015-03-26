@@ -86,7 +86,7 @@
     </div>
       <ul class="list-unstyled services-finished-list">
       <% if @services_finished == [] %>
-          <p> Have you finished any of the Volunteer Opportunities on your To Do list? If so, click the check box next to it to mark it as complete! </p>
+          <p class="service-comp-empty"> Have you finished any of the Volunteer Opportunities on your To Do list? If so, click the check box next to it to mark it as complete! </p>
         <% else %>
         <% @services_finished.each do |s| %>
           <li><span class="glyphicon glyphicon-ok"></span> <%= s.title %></li>
