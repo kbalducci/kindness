@@ -2,6 +2,7 @@ class ActsController < ApplicationController
 
   def index
     @acts = Act.all
+    @title = "RAKs"
     # act_id = Act.find
     # @kindship = Kindship.where(user_id: current_user, act_id: Act.find(params[:id]))
   end

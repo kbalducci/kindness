@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
   else
     @services = Service.all
   end
-
+    @title = "Volunteer"
   end
 
   def show
