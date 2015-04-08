@@ -1,28 +1,59 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==About
+Lift UP! was my final project for The Iron Yard Ruby on Rails Course (12 week coding bootcamp). Lift UP! is a site people can go to to find out about volunteering opportunities nearby and get ideas for Random Acts of Kindness (RAKs). Users can also input ideas for both categories so others can view these suggestions. Users can create to do lists for volunteering and raks.
 
-Things you may want to cover:
+==Live Site
 
-* Ruby version
+* https://spread-kindness.herokuapp.com/
 
-* System dependencies
+==Technologies Used
 
-* Configuration
+* Ruby version 2.2.0
 
-* Database creation
+* Rails
 
-* Database initialization
+* Javascript
 
-* How to run the test suite
+* AJAX
 
-* Services (job queues, cache servers, search engines, etc.)
+* Twitter Bootstrap
 
-* Deployment instructions
+* GeoCoder Gem
 
-* ...
+* Devise
+
+* Heroku
+
+* Postgresql database
+
+* AWS Paperclip
+
+* Simple Forms
+
+* Figaro
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Cloning Instructions
+* Git clone this project into a new repository
+
+* Update the gemfile to include your version of Ruby (currently set to Ruby 2.2.0)
+
+* Run 'bundle install' to update gems being used
+
+* Run 'rake db:create' to create database
+
+* Run 'rake db:migrate'
+
+* Run 'rake db:seed' to pre-fill your database with sample data from the seed file
+
+* Run 'rake db:reset' ONLY if you want to drop the contents of the database and re-seed with the seed data
+
+* Run 'rails s' to start the rails server
+
+* To view locally, use the address localhost:3000 (or whatever port # you have assgined your rails server)
+
+* If using Heroku and Figaro, run 'figaro heroku:set -e production'
+
+* When adding to Heroku, make sure you run all of the rake commands with 'heroku run rake COMMAND' (example: 'heroku run rake db:migrate')
+
